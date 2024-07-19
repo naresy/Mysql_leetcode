@@ -20,3 +20,18 @@
 
 -- The result format is in the following example.
 
+SELECT 
+    ROUND((SUM(CASE WHEN order_date = customer_pref_delivery_date THEN 1 ELSE 0 END) * 100.0 / COUNT(*)), 2) AS immediate_percentage
+FROM 
+    (SELECT 
+         customer_id, 
+         MIN(order_date) AS first_order_date
+     FROM 
+         delivery
+     GROUP BY 
+         customer_id) AS first_orders
+JOIN 
+    delivery AS d
+ON 
+    first_orders.customer_id = d.customer_id 
+    AND first_orders.first_order_date = d.order_date;
