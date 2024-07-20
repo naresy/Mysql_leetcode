@@ -59,3 +59,14 @@
 
 -- Cat queries quality equals ((2 / 5) + (3 / 3) + (4 / 7)) / 3 = 0.66
 -- Cat queries poor_ query_percentage is (1 / 3) * 100 = 33.33
+
+SELECT 
+    query_name,
+    ROUND(SUM(rating / position) / COUNT(*), 2) AS quality,
+    CASE 
+        WHEN query_name = 'dog' AND COUNT(CASE WHEN rating < 3 THEN 1 END) > 0 THEN ROUND(COUNT(CASE WHEN rating < 3 THEN 1 END) / COUNT(*) * 100, 2)
+        WHEN query_name = 'cat' AND COUNT(CASE WHEN rating < 3 THEN 1 END) > 0 THEN ROUND(COUNT(CASE WHEN rating < 3 THEN 1 END) / COUNT(*) * 100, 2)
+        ELSE NULL
+    END AS poor_query_percentage
+FROM Queries
+GROUP BY query_name;
