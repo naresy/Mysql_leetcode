@@ -70,3 +70,16 @@ SELECT
     END AS poor_query_percentage
 FROM Queries
 GROUP BY query_name;
+
+
+-- Output
+
+-- | query_name | quality | poor_query_percentage |
+-- | ---------- | ------- | --------------------- |
+-- | Dog        | 2.5     | 33.33                 |
+-- | Cat        | 0.66    | 33.33                 |
+-- Expected
+-- | query_name | quality | poor_query_percentage |
+-- | ---------- | ------- | --------------------- |
+-- | Dog        | 2.5     | 33.33                 |
+-- | Cat        | 0.66    | 33.33                 |
