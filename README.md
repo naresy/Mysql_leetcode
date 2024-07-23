@@ -57,7 +57,7 @@ mysql -u username -p < problem_name.sql
 <p>This directory contains solutions to easy SQL problems.</p>
 
 <h3>Medium</h3>
-<p>This directory contains solutions to medium difficulty SQL problems.</p>
+<p>This directory contains solutions to medium-difficulty SQL problems.</p>
 
 <h3>Hard</h3>
 <p>This directory contains solutions to hard SQL problems.</p>
@@ -66,7 +66,7 @@ mysql -u username -p < problem_name.sql
 <p>If you have a better solution or an improvement to an existing solution, feel free to contribute by following these steps:</p>
 <ol>
   <li>Fork the repository.</li>
-  <li>Create a new branch for your feature or bugfix.</li>
+  <li>Create a new branch for your feature or bug fix.</li>
   <li>Commit your changes and push the branch.</li>
   <li>Create a pull request detailing your changes.</li>
 </ol>
