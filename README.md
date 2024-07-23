@@ -33,11 +33,11 @@
 <ol>
   <li><strong>Clone the Repository:</strong></li>
     <pre><code>
-    git clone https://github.com/yourusername/leetcode-mysql-solutions.git
+    git clone https://github.com/naresy/Mysql_leetcode
     </code></pre>
   <li><strong>Navigate to the Directory:</strong></li>
     <pre><code>
-    cd leetcode-mysql-solutions
+    cd Mysql_leetcode
     </code></pre>
 </ol>
 
