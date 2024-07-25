@@ -8,4 +8,4 @@ group by
 activity_date
 order by
 activity_date
--- this is the new idea for creating the branch
+-- this code gives the result about the user activity
