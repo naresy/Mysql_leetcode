@@ -46,3 +46,7 @@
 -- - English has 1 student, so we do not include it.
 -- - Biology has 1 student, so we do not include it.
 -- - Computer has 1 student, so we do not include it.
+SELECT class
+FROM Courses
+GROUP BY class
+HAVING COUNT(student) > 1;
