@@ -63,3 +63,11 @@
 -- | null |
 -- +------+
 -- Explanation: There are no single numbers in the input table so we return null.
+SELECT
+  COALESCE(MAX(num), NULL) AS num
+FROM (
+  SELECT num
+  FROM MyNumbers
+  GROUP BY num
+  HAVING COUNT(num) = 1
+) AS single_numbers;
