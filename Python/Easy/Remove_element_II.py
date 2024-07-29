@@ -40,3 +40,16 @@
 # 1 <= nums.length <= 3 * 104
 # -100 <= nums[i] <= 100
 # nums is sorted in non-decreasing order.
+class Solution(object):
+    def removeDuplicates(self, nums):
+        new_list=[]
+        count=0
+        for i in range(len(nums)):
+            if nums[i] in new_list:
+                continue
+            else:
+                new_list.append(nums[i])
+                count=count+1
+            for i in range(count):
+                nums[i] = new_list[i]
+        return count
