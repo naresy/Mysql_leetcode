@@ -65,3 +65,5 @@
 -- | 2           | Alice   | 2             | 37          |
 -- | 3           | Bob     | 1             | 37          |
 -- +-------------+---------+---------------+-------------+
+select s.employee_id, s.name ,count(ss.reports_to)as reports_count,round(avg(ss.age))as average_age from employees s  join employees ss on s.employee_id=ss.reports_to group by s.employee_id
+order by employee_id asc
