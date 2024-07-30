@@ -58,3 +58,6 @@
 -- +-------------+
 -- Explanation: 
 -- The customers who bought all the products (5 and 6) are customers with IDs 1 and 3.
+
+
+select customer_id from customer group by customer_id having count(distinct product_key)=(select count(product_key)from product)
