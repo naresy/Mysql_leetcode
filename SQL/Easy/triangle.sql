@@ -36,3 +36,10 @@
 -- | 13 | 15 | 30 | No       |
 -- | 10 | 20 | 15 | Yes      |
 -- +----+----+----+----------+
+select x,y,z, 
+case
+when (x+y)>z and (x+z)>y and (y+z)>x then "Yes"
+else
+"No"
+end as triangle
+from triangle
