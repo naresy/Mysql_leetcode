@@ -20,3 +20,13 @@
 
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 105
+
+def canJump(nums):
+    max_reach = 0
+    
+    for i in range(len(nums)):
+        if i > max_reach:
+            return false
+        max_reach = max(max_reach, i + nums[i])
+        
+    return max_reach >= len(nums) - 1
