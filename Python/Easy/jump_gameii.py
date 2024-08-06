@@ -24,3 +24,25 @@
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 1000
 # It's guaranteed that you can reach nums[n - 1].
+
+class Solution(object):
+    def jump(self, nums):
+        n = len(nums)
+        if n == 1:
+            return 0
+        
+        jumps = 0
+        farthest = 0
+        end = 0
+        
+        for i in range(n - 1):
+            farthest = max(farthest, i + nums[i])
+            
+            if i == end:
+                jumps += 1
+                end = farthest
+                
+                if end >= n - 1:
+                    break
+        
+        return jumps
