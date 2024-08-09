@@ -14,7 +14,7 @@
 
 # Input: citations = [1,3,1]
 # Output: 1
-
+# solution
 class Solution(object):
     def hIndex(self, citations):
         citations.sort(reverse=True)
