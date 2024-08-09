@@ -24,7 +24,7 @@
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 1000
 # It's guaranteed that you can reach nums[n - 1].
-
+# solution
 class Solution(object):
     def jump(self, nums):
         n = len(nums)
