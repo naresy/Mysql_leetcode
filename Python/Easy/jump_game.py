@@ -20,6 +20,7 @@
 
 # 1 <= nums.length <= 104
 # 0 <= nums[i] <= 105
+# solution
 
 def canJump(nums):
     max_reach = 0
