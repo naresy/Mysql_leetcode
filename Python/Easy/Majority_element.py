@@ -12,6 +12,7 @@
 
 # Input: nums = [2,2,1,1,1,2,2]
 # Output: 2
+# solution
 
 class Solution(object):
     def majorityElement(self, nums):
