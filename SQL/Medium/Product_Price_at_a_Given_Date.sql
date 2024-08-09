@@ -41,6 +41,8 @@
 -- | 1          | 35    |
 -- | 3          | 10    |
 -- +------------+-------+1s 
+
+-- Here is the solution
 SELECT 
     p.product_id, 
     COALESCE(
