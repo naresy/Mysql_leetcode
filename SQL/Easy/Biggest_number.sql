@@ -63,6 +63,8 @@
 -- | null |
 -- +------+
 -- Explanation: There are no single numbers in the input table so we return null.
+
+-- solution
 SELECT
   COALESCE(MAX(num), NULL) AS num
 FROM (
