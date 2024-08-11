@@ -40,6 +40,7 @@
 -- | 1               |
 -- +-----------------+
 -- Explanation: 1 is the only number that appears consecutively for at least three times.WITH ConsecutiveNums AS (
+    -- solution
     SELECT
         num,
         LEAD(num, 1) OVER (ORDER BY id) AS next_num,
