@@ -52,7 +52,7 @@
 -- - The Primary department for employee 2 is 1.
 -- - The Primary department for employee 3 is 3.
 -- - The Primary department for employee 4 is 3.
-
+-- solution
 select employee_id ,department_id 
 from employee 
 where primary_flag='Y' OR
