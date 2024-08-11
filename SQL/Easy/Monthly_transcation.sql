@@ -19,6 +19,7 @@
 -- Return the result table in any order.
 
 -- The query result format is in the following example.
+-- solution
 
 SELECT 
     DATE_FORMAT(trans_date, '%Y-%m') AS month,
