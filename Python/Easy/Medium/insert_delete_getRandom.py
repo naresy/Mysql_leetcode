@@ -25,3 +25,42 @@
 # randomizedSet.remove(1); // Removes 1 from the set, returns true. Set now contains [2].
 # randomizedSet.insert(2); // 2 was already in the set, so return false.
 # randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
+
+class RandomizedSet(object):
+
+    def __init__(self):
+        self.dict = {}  
+        self.list = []
+        
+
+    def insert(self, val):
+       if val in self.dict:
+            return False  
+       self.dict[val] = len(self.list)  
+       self.list.append(val)  
+       return True
+
+        
+
+    def remove(self, val):
+        if val not in self.dict:
+            return False  # If value does not exist, return False
+        # Get index of the element to remove
+        index = self.dict[val]
+        # Swap the element to remove with the last element in the list
+        last_element = self.list[-1]
+        self.list[index] = last_element
+        self.dict[last_element] = index
+        # Remove the last element
+        self.list.pop()
+        del self.dict[val]
+        return True
+
+
+
+
+    def getRandom(self):
+        return random.choice(self.list)
+        
+
+
