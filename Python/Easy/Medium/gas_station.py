@@ -42,17 +42,18 @@ class Solution(object):
     def canCompleteCircuit(self, gas, cost):
         total_gas=0
         total_cost=0
-        current_gas=0
+        current_position=0
         start_position=0
         for i in range(len(gas)):
             total_gas+=gas[i]
             total_cost+=cost[i]
-            current_gas=cost[i]-gas[i]
-            if current_gas>0:
+            current_position += gas[i] - cost[i]
+            if current_position<0:
                 start_position =i+1
                 current_position=0
         if total_gas<total_cost:
             return -1
         else:
             return start_position        
+         
         
