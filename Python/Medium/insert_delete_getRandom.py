@@ -26,6 +26,9 @@
 # randomizedSet.insert(2); // 2 was already in the set, so return false.
 # randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
 
+
+# solution
+
 class RandomizedSet(object):
 
     def __init__(self):
