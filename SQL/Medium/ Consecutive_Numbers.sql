@@ -16,6 +16,9 @@
 
 -- The result format is in the following example.
 
+-- solution
+
+
 WITH ConsecutiveNums AS (
     SELECT
         num,
