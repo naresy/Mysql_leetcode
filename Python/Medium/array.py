@@ -16,6 +16,8 @@
     
 #         return answer
 
+# here is the solution
+
 class Solution(object):
    def product_except_self(self, nums):
         n = len(nums)
