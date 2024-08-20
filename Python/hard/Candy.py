@@ -26,6 +26,8 @@
 # n == ratings.length
 # 1 <= n <= 2 * 104
 # 0 <= ratings[i] <= 2 * 104
+# solution
+
 
 class Solution(object):
     def candy(self, ratings):
