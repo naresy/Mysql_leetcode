@@ -37,7 +37,7 @@
 # 1 <= n <= 105
 # 0 <= gas[i], cost[i] <= 104
 
-
+# solution
 class Solution(object):
     def canCompleteCircuit(self, gas, cost):
         total_gas=0
