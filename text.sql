@@ -1,18 +1,20 @@
--- select 
--- e.department,
--- e.employeeid,
--- e.salary
--- from
--- employee e
--- where 
--- e.salary=(
---     select max(salary)
---     from employee
---     where department=e.department
 
--- )
+-- Maximum salary
+select 
+e.department,
+e.employeeid,
+e.salary
+from
+employee e
+where 
+e.salary=(
+    select max(salary)
+    from employee
+    where department=e.department
 
--- e.department,e.employeeid
+)
+
+e.department,e.employeeid
 
 
 
