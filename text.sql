@@ -21,18 +21,18 @@ e.department,e.employeeid
 
 
 
--- question 2
+-- customer detail having order more than three times
 
--- select 
--- c.customer_id,
--- c.customer_name
--- count(o.orderid)as ordercount
--- from customer c
--- join 
--- order o on c customer_id=o.customer_id
--- group by
--- c.customer_id, c.customer_name
--- having
--- count (o.orderid)>3
--- order by
--- ordercount desc
+select 
+c.customer_id,
+c.customer_name
+count(o.orderid)as ordercount
+from customer c
+join 
+order o on c customer_id=o.customer_id
+group by
+c.customer_id, c.customer_name
+having
+count (o.orderid)>3
+order by
+ordercount desc
