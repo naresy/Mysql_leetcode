@@ -1,7 +1,7 @@
 <h1>LeetCode MySQL Solutions</h1>
 
 <h2>Overview</h2>
-<p>This repository contains my solutions to various SQL problems on LeetCode. Each solution is written in MySQL and includes detailed comments to explain the logic and approach used to solve the problem. The goal of this repository is to demonstrate problem-solving skills, proficiency in SQL, and understanding of database concepts.</p>
+<p>This repository contains my solutions to various SQL and Python problems on LeetCode. Each solution is written in MySQL or Python, with detailed comments explaining the logic and approach used to solve the problem. The goal of this repository is to demonstrate problem-solving skills, proficiency in SQL and Python, and a strong understanding of database and programming concepts.</p>
 
 <h2>Repository Structure</h2>
 <p>The repository is organized into directories based on the categories or types of problems available on LeetCode. Each directory contains solutions to problems under that category.</p>
