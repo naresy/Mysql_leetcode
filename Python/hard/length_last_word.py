@@ -30,3 +30,18 @@
 # There will be at least one word in s.
 
 #solution.
+def length_of_last_word(s):
+    # Split the string into words by spaces
+    words = s.split()
+    
+    # Return the length of the last word
+    return len(words[-1])
+
+# Example usage
+s1 = "Hello World"
+s2 = "   fly me   to   the moon  "
+s3 = "luffy is still joyboy"
+
+print(length_of_last_word(s1))  # Output: 5
+print(length_of_last_word(s2))  # Output: 4
+print(length_of_last_word(s3))  # Output: 6
