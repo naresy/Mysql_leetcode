@@ -34,3 +34,44 @@
 # Follow-up: If the string data type is mutable in your language, can you solve it in-place with O(1) extra space?
 
 # solution
+
+class Solution(object):
+    def reverseWords(self, s):
+        s = list(s)
+        
+        def reverse(start, end):
+            while start < end:
+                s[start], s[end] = s[end], s[start]
+                start += 1
+                end -= 1
+        
+        # Step 1: Reverse the entire string
+        reverse(0, len(s) - 1)
+        
+        n = len(s)
+        start = 0
+        
+        # Step 2: Reverse each word in the reversed string
+        for end in range(n):
+            if s[end] == ' ':
+                reverse(start, end - 1)
+                start = end + 1
+            elif end == n - 1:
+                reverse(start, end)
+        
+        # Step 3: Clean up spaces: remove extra spaces and manage only single spaces between words
+        result = []
+        i = 0
+        while i < n:
+            if s[i] != ' ':
+                # Add word to result
+                if result and result[-1] != ' ':
+                    result.append(' ')
+                while i < n and s[i] != ' ':
+                    result.append(s[i])
+                    i += 1
+            else:
+                i += 1
+        
+        return ''.join(result)
+
