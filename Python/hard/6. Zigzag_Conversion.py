@@ -9,6 +9,7 @@
 
 # string convert(string s, int numRows);
  
+# solution
 def convert(s: str, numRows: int) -> str:
     # Edge case handling
     if numRows == 1 or numRows >= len(s):
