@@ -19,3 +19,7 @@
 
 # 1 <= haystack.length, needle.length <= 104
 # haystack and needle consist of only lowercase English characters
+# solution
+class Solution(object):
+    def strStr(self, haystack, needle):
+        return haystack.find(needle)
