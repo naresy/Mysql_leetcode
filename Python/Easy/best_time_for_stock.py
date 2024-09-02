@@ -22,7 +22,7 @@
 # Output: 0
 # Explanation: There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
  
-
+# solution
 # Constraints:
 
 # 1 <= prices.length <= 3 * 104
