@@ -15,7 +15,6 @@
 class Solution(object):
     def majorityElement(self, nums):
         occourance={}
-        
         for num in nums:
             if num in occourance:
                 occourance[num]+=1
