@@ -1,3 +1,4 @@
+# left rotation
 class Solution(object):
     def rotate(self, nums, k):
 
