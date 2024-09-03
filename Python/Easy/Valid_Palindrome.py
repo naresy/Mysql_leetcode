@@ -27,3 +27,9 @@
 # 1 <= s.length <= 2 * 105
 # s consists only of printable ASCII characters.
 # solution
+
+class Solution(object):
+    def isPalindrome(self, s):
+        clear_string=''.join(char.lower()for char in s if char.isalnum())
+        return clear_string==clear_string[::-1]
+        
