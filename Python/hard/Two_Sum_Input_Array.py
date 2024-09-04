@@ -26,6 +26,7 @@
 
 # solution
 
+
 def two_sum(numbers, target):
     left, right = 0, len(numbers) - 1
 
