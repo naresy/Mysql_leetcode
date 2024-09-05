@@ -25,6 +25,7 @@
 # Constraints:
 # 1 <= prices.length <= 3 * 104
 # 0 <= prices[i] <= 104
+# solutions
 def maxProfit(prices):
     max_profit = 0
     
