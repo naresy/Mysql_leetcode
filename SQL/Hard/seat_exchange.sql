@@ -45,3 +45,17 @@
 -- Explanation: 
 -- Note that if the number of students is odd, there is no need to change the last one's seat.
 -- solution
+
+WITH CTE AS (
+    SELECT id, student, ROW_NUMBER() OVER (ORDER BY id ASC) AS rn
+    FROM seat
+)
+SELECT 
+    CASE
+        WHEN rn % 2 = 1 AND LEAD(id) OVER (ORDER BY rn) IS NOT NULL THEN LEAD(id) OVER (ORDER BY rn)
+        WHEN rn % 2 = 0 THEN LAG(id) OVER (ORDER BY rn)
+        ELSE id
+    END AS id,
+    student  
+FROM CTE
+ORDER BY id ASC;
