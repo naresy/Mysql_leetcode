@@ -44,3 +44,4 @@
 -- +----+---------+
 -- Explanation: 
 -- Note that if the number of students is odd, there is no need to change the last one's seat.
+-- solution
