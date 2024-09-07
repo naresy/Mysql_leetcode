@@ -47,3 +47,18 @@
 -- Low Salary: Account 2.
 -- Average Salary: No accounts.
 -- High Salary: Accounts 3, 6, and 8.
+
+SELECT 
+    'Low Salary' AS Category, 
+    SUM(CASE WHEN income < 20000 THEN 1 ELSE 0 END) AS accounts_count
+FROM accounts
+UNION ALL
+SELECT 
+    'Average Salary' AS Category, 
+    SUM(CASE WHEN income BETWEEN 20000 AND 50000 THEN 1 ELSE 0 END) AS accounts_count
+FROM accounts
+UNION ALL
+SELECT 
+    'High Salary' AS Category, 
+    SUM(CASE WHEN income > 50000 THEN 1 ELSE 0 END) AS accounts_count
+FROM accounts;
