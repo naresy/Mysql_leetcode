@@ -48,6 +48,8 @@
 -- Average Salary: No accounts.
 -- High Salary: Accounts 3, 6, and 8.
 
+-- solution
+
 SELECT 
     'Low Salary' AS Category, 
     SUM(CASE WHEN income < 20000 THEN 1 ELSE 0 END) AS accounts_count
