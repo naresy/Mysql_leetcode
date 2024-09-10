@@ -20,12 +20,14 @@
 # Output: 1
 
 # solution
+
 class Solution(object):
     def maxArea(self, height):
         left,right=0,len(height)-1
         max_area=0
         while left<right:
-            area=min(height[left],height[right])*(right-left)
+            # calculating the area of the container
+            area=min(height[left],height[right])*(right-left)  
             max_area=max(max_area,area)
             if height[left]<height[right]:
                 left+=1
