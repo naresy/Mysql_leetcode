@@ -29,3 +29,21 @@
 # Follow up: If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log(n)).
 
 # solution
+class Solution(object):
+    def minSubArrayLen(self, target, nums):
+        
+        n = len(nums)
+        min_len = float('inf')  # Initialize with infinity
+        current_sum = 0
+        left = 0
+        
+        for right in range(n):
+            current_sum += nums[right]  # Expand the window by adding the current element
+            
+            while current_sum >= target:  # Shrink the window from the left
+                min_len = min(min_len, right - left + 1)  # Update the minimum length
+                current_sum -= nums[left]  # Remove the leftmost element
+                left += 1
+        
+        return min_len if min_len != float('inf') else 0  # Return the result, or 0 if no valid subarray is found
+        
