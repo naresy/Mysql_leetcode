@@ -25,13 +25,10 @@
  
 
 # Constraints:
-
 # 1 <= s.length <= 104
 # s contains English letters (upper-case and lower-case), digits, and spaces ' '.
 # There is at least one word in s.
- 
-
-# Follow-up: If the string data type is mutable in your language, can you solve it in-place with O(1) extra space?
+ # Follow-up: If the string data type is mutable in your language, can you solve it in-place with O(1) extra space?
 
 # solution
 
