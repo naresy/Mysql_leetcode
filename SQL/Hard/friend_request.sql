@@ -43,3 +43,24 @@
 
 -- Follow up: In the real world, multiple people could have the same most number of friends. Could you find all these people in this case?
 
+WITH FriendsCount AS (
+    -- Count occurrences of each user in both requester_id and accepter_id
+    SELECT requester_id AS id, COUNT(accepter_id) AS num
+    FROM RequestAccepted
+    GROUP BY requester_id
+    UNION
+    SELECT accepter_id AS id, COUNT(requester_id) AS num
+    FROM RequestAccepted
+    GROUP BY accepter_id
+),
+-- Summing up all the friend counts for each person
+TotalFriends AS (
+    SELECT id, SUM(num) AS total_friends
+    FROM FriendsCount
+    GROUP BY id
+)
+-- Get the person with the maximum number of friends
+SELECT id, total_friends AS num
+FROM TotalFriends
+ORDER BY total_friends DESC
+LIMIT 1;
