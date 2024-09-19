@@ -54,7 +54,7 @@ mysql -u username -p < problem_name.sql
 <h2>Problem Categories</h2>
 
 <h3>Easy</h3>
-<p>This directory contains solutions to easy SQL problems.</p>
+<p>This directory contains solutions to easy SQL/python  problems.</p>
 
 <h3>Medium</h3>
 <p>This directory contains solutions to medium-difficulty SQL problems.</p>
