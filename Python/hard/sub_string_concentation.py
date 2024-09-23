@@ -49,3 +49,40 @@
 # 1 <= words[i].length <= 30
 # s and words[i] consist of lowercase English letters.
 
+def findSubstring(s, words):
+    if not s or not words:
+        return []
+
+    word_len = len(words[0])
+    num_words = len(words)
+    concat_len = word_len * num_words
+    word_count = {}
+
+    # Create a frequency dictionary for words
+    for word in words:
+        word_count[word] = word_count.get(word, 0) + 1
+
+    result = []
+
+    # Slide over the string `s`
+    for i in range(len(s) - concat_len + 1):
+        seen = {}
+        j = 0
+        # Check every word in the current window
+        while j < num_words:
+            word_index = i + j * word_len
+            word = s[word_index: word_index + word_len]
+            if word in word_count:
+                seen[word] = seen.get(word, 0) + 1
+                # If the word is seen more than it appears in `words`, break
+                if seen[word] > word_count[word]:
+                    break
+            else:
+                break
+            j += 1
+        
+        # If all words match
+        if j == num_words:
+            result.append(i)
+    
+    return result
