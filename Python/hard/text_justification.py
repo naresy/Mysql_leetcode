@@ -56,7 +56,7 @@
 # words[i].length <= maxWidth
 
 # solution
-
+##
 class Solution(object):
     def fullJustify(self, words, maxWidth):
          result = []  # List to store the fully justified lines
