@@ -42,6 +42,7 @@
  
 
 -- Follow up: In the real world, multiple people could have the same most number of friends. Could you find all these people in this case?
+--sql
 
 WITH FriendsCount AS (
     -- Count occurrences of each user in both requester_id and accepter_id
