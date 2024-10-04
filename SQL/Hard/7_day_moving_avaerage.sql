@@ -61,3 +61,18 @@
 -- 4th moving average from 2019-01-04 to 2019-01-10 has an average_amount of (130 + 110 + 140 + 150 + 80 + 110 + 130 + 150)/7 = 142.86
 
 -- solution
+
+WITH Daily_Summary AS (
+    SELECT 
+        visited_on, 
+        SUM(amount) AS daily_amount
+    FROM Customer
+    GROUP BY visited_on
+)
+SELECT 
+    visited_on,
+    SUM(daily_amount) OVER (ORDER BY visited_on ASC ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS amount,
+    ROUND(AVG(daily_amount) OVER (ORDER BY visited_on ASC ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS average_amount
+FROM Daily_Summary
+WHERE visited_on >= '2019-01-07'
+ORDER BY visited_on;
