@@ -76,4 +76,4 @@ SELECT
 FROM Daily_Summary
 WHERE visited_on >= '2019-01-07'
 ORDER BY visited_on;
--- solution
+-- solution end here
