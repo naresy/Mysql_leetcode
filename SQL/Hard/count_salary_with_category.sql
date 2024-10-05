@@ -49,7 +49,7 @@
 -- High Salary: Accounts 3, 6, and 8.
 
 -- solution
---
+--salary_based solution
 
 SELECT 
     'Low Salary' AS Category, 
