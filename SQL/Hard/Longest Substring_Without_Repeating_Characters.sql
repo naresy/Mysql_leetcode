@@ -27,6 +27,8 @@
 -- 0 <= s.length <= 5 * 104
 -- s consists of English letters, digits, symbols and spaces.
 --solution
+
+
 def length_of_longest_substring(s: str) -> int:
     char_set = set()  # Set to store characters in the current window
     left = 0  # Left pointer of the sliding window
