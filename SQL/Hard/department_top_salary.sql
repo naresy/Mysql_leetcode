@@ -108,3 +108,14 @@ FROM
     RankedSalaries
 WHERE 
     salary_rank <= 3;
+
+
+Explanation:
+RankedSalaries CTE (Common Table Expression):
+
+We use the DENSE_RANK() window function, which ranks salaries within each department (PARTITION BY e.departmentId). The salaries are ordered in descending order (ORDER BY e.salary DESC).
+For each employee, this query assigns a salary_rank based on their salary within their department.
+Main Query:
+
+We select the employees whose salary_rank is 1, 2, or 3 (i.e., the top three unique salaries in each department).
+The final result includes the department name, employee name, and salary.
