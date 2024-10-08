@@ -85,3 +85,26 @@ To solve this problem, you can follow these steps using SQL:
 Identify the top three unique salaries per department. This can be done using the RANK() or DENSE_RANK() window function to rank the salaries within each department.
 Filter employees based on the top three unique salaries. Once the salaries are ranked, we can filter out only the top three ranks.
 Join the Employee table with the Department table to retrieve department names instead of department IDs.
+
+WITH RankedSalaries AS (
+    SELECT 
+        e.name AS Employee, 
+        e.salary AS Salary, 
+        e.departmentId, 
+        d.name AS Department,
+        DENSE_RANK() OVER (PARTITION BY e.departmentId ORDER BY e.salary DESC) AS salary_rank
+    FROM 
+        Employee e
+    JOIN 
+        Department d 
+    ON 
+        e.departmentId = d.id
+)
+SELECT 
+    Department, 
+    Employee, 
+    Salary
+FROM 
+    RankedSalaries
+WHERE 
+    salary_rank <= 3;
