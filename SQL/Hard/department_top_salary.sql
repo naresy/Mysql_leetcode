@@ -78,3 +78,10 @@
 -- - Henry earns the highest salary
 -- - Sam earns the second-highest salary
 -- - There is no third-highest salary as there are only two employees
+
+
+To solve this problem, you can follow these steps using SQL:
+
+Identify the top three unique salaries per department. This can be done using the RANK() or DENSE_RANK() window function to rank the salaries within each department.
+Filter employees based on the top three unique salaries. Once the salaries are ranked, we can filter out only the top three ranks.
+Join the Employee table with the Department table to retrieve department names instead of department IDs.
