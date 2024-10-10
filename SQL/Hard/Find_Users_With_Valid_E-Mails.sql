@@ -51,3 +51,7 @@
 -- The mail of user 5 has the # sign which is not allowed.
 -- The mail of user 6 does not have the leetcode domain.
 -- The mail of user 7 starts with a period.
+
+SELECT user_id, name, mail
+FROM Users
+WHERE mail REGEXP '^[a-zA-Z][a-zA-Z0-9_.-]*@leetcode\\.com$';
