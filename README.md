@@ -67,7 +67,7 @@ mysql -u username -p < problem_name.sql
 <ol>
   <li>Fork the repository.</li>
   <li>Create a new branch for your feature or bug fix.</li>
-  <li>Commit your changes and push the branch.</li>
+  <li>Commit your changes and push the branch, save the code</li>
   <li>Create a pull request detailing your changes.</li>
 </ol>
 
