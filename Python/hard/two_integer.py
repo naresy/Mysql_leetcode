@@ -24,3 +24,41 @@
 
 # -231 <= dividend, divisor <= 231 - 1
 # divisor != 0
+
+
+def divide(dividend: int, divisor: int) -> int:
+    # Define the range for 32-bit signed integers
+    MAX_INT = 2**31 - 1
+    MIN_INT = -2**31
+    
+    # Edge case: If the divisor is zero, return the max int (not strictly necessary for this case as divisor != 0)
+    if divisor == 0:
+        return MAX_INT
+    
+    # Edge case: If dividend is MIN_INT and divisor is -1, return MAX_INT because the result will overflow
+    if dividend == MIN_INT and divisor == -1:
+        return MAX_INT
+    
+    # Determine the sign of the result
+    negative = (dividend < 0) != (divisor < 0)
+    
+    # Convert both numbers to positive
+    dividend, divisor = abs(dividend), abs(divisor)
+    
+    quotient = 0
+    # The idea is to subtract divisor from dividend until dividend is smaller than divisor
+    while dividend >= divisor:
+        temp_divisor, multiple = divisor, 1
+        # Increase the divisor by powers of two (bit shifts) to speed up the process
+        while dividend >= (temp_divisor << 1):
+            temp_divisor <<= 1
+            multiple <<= 1
+        # Subtract the largest shifted divisor and add corresponding multiples to the quotient
+        dividend -= temp_divisor
+        quotient += multiple
+    
+    # Apply the sign to the result
+    quotient = -quotient if negative else quotient
+    
+    # Clamp the result within the 32-bit integer range
+    return max(MIN_INT, min(MAX_INT, quotient))
