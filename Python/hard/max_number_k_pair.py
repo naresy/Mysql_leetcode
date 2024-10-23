@@ -29,6 +29,8 @@
 # 1 <= nums[i] <= 109
 # 1 <= k <= 109
 
+#solution
+
 def maxOperations(nums, k):
     num_count = {}
     operations = 0
