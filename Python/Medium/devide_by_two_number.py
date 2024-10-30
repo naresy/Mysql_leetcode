@@ -24,3 +24,32 @@
 
 # -231 <= dividend, divisor <= 231 - 1
 # divisor != 0
+
+def divide(dividend: int, divisor: int) -> int:
+    # Constants for 32-bit signed integer limits
+    INT_MAX = 2**31 - 1
+    INT_MIN = -2**31
+    
+    # Special case for overflow
+    if dividend == INT_MIN and divisor == -1:
+        return INT_MAX
+    
+    # Determine the sign of the result
+    negative = (dividend < 0) != (divisor < 0)
+    
+    # Work with positive values for the loop
+    dividend, divisor = abs(dividend), abs(divisor)
+    
+    quotient = 0
+    # Left-shift divisor and subtract until the dividend is smaller
+    while dividend >= divisor:
+        temp, multiple = divisor, 1
+        while dividend >= (temp << 1):
+            temp <<= 1
+            multiple <<= 1
+        # Subtract the largest shifted divisor and add multiples to the quotient
+        dividend -= temp
+        quotient += multiple
+    
+    # Apply sign to the result
+    return -quotient if negative else quotient
