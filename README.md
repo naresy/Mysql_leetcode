@@ -63,7 +63,7 @@ mysql -u username -p < problem_name.sql
 <p>This directory contains solutions to hard SQL problems.</p>
 
 <h2>Contributing</h2>
-<p>If you have a better solution or an improvement to an existing solution, feel free to contribute by following these steps:</p>
+<p>If you have a better solution or an improvement to an existing solution, Please feel free to contribute by following these steps:</p>
 <ol>
   <li>Fork the repository.</li>
   <li>Create a new branch for your feature or bug fix.</li>
