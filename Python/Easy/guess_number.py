@@ -32,6 +32,7 @@
 # 1 <= n <= 231 - 1
 # 1 <= pick <= n
 
+# solution
 def guessNumber(n: int) -> int:
     low, high = 1, n
     while low <= high:
