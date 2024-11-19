@@ -78,3 +78,16 @@
 -- - Henry earns the highest salary
 -- - Sam earns the second-highest salary
 -- - There is no third-highest salary as there are only two employees
+WITH DepartmentSalaries AS (
+    SELECT 
+        d.name AS Department,
+        e.name AS Employee,
+        e.salary,
+        DENSE_RANK() OVER (PARTITION BY e.departmentId ORDER BY e.salary DESC) AS salary_rank
+    FROM Employee e
+    JOIN Department d ON e.departmentId = d.id
+)
+
+SELECT Department, Employee, salary AS Salary
+FROM DepartmentSalaries
+WHERE salary_rank <= 3;
